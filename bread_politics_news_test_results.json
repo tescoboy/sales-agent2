@@ -1,0 +1,459 @@
+{
+  "test_metadata": {
+    "advertiser": "FreshBake Co.",
+    "campaign_name": "Breaking Bread - Politics & News",
+    "test_timestamp": "2025-08-09T00:04:41.017609",
+    "brief_summary": "Selling premium bread to people who like politics and news"
+  },
+  "signals_agent": {
+    "health": {
+      "status": "healthy",
+      "protocols": [
+        "mcp",
+        "a2a"
+      ],
+      "timestamp": "2025-08-09T00:04:41.072248"
+    },
+    "discovery": {
+      "message": "Found 2 signals for 'politics news enthusiasts political content readers news consumers' with 15.0%-45.0% coverage, $2.50-$3.50 CPM, available on 3 platforms.",
+      "context_id": "ctx_1754694281_qtnz1d",
+      "signals": [
+        {
+          "signals_agent_segment_id": "sports_enthusiasts_public",
+          "name": "Sports Enthusiasts - Public",
+          "description": "Broad sports audience available platform-wide",
+          "signal_type": "audience",
+          "data_provider": "Polk",
+          "coverage_percentage": 45.0,
+          "deployments": [
+            {
+              "platform": "index-exchange",
+              "account": null,
+              "is_live": true,
+              "scope": "platform-wide",
+              "decisioning_platform_segment_id": "ix_sports_enthusiasts_public",
+              "estimated_activation_duration_minutes": 60
+            },
+            {
+              "platform": "the-trade-desk",
+              "account": null,
+              "is_live": true,
+              "scope": "platform-wide",
+              "decisioning_platform_segment_id": "ttd_sports_general",
+              "estimated_activation_duration_minutes": 60
+            }
+          ],
+          "pricing": {
+            "cpm": 3.5,
+            "revenue_share_percentage": 15.0,
+            "currency": "USD"
+          },
+          "has_coverage_data": true,
+          "has_pricing_data": true
+        },
+        {
+          "signals_agent_segment_id": "peer39_luxury_auto",
+          "name": "Luxury Automotive Context",
+          "description": "Pages with luxury automotive content and high viewability",
+          "signal_type": "audience",
+          "data_provider": "Peer39",
+          "coverage_percentage": 15.0,
+          "deployments": [
+            {
+              "platform": "index-exchange",
+              "account": null,
+              "is_live": true,
+              "scope": "platform-wide",
+              "decisioning_platform_segment_id": "ix_peer39_luxury_auto_gen",
+              "estimated_activation_duration_minutes": 60
+            },
+            {
+              "platform": "index-exchange",
+              "account": "agency-123-ix",
+              "is_live": true,
+              "scope": "account-specific",
+              "decisioning_platform_segment_id": "ix_agency123_peer39_lux_auto",
+              "estimated_activation_duration_minutes": 60
+            },
+            {
+              "platform": "openx",
+              "account": null,
+              "is_live": true,
+              "scope": "platform-wide",
+              "decisioning_platform_segment_id": "ox_peer39_lux_auto_456",
+              "estimated_activation_duration_minutes": 60
+            },
+            {
+              "platform": "pubmatic",
+              "account": "brand-456-pm",
+              "is_live": false,
+              "scope": "account-specific",
+              "decisioning_platform_segment_id": null,
+              "estimated_activation_duration_minutes": 60
+            }
+          ],
+          "pricing": {
+            "cpm": 2.5,
+            "revenue_share_percentage": 12.0,
+            "currency": "USD"
+          },
+          "has_coverage_data": true,
+          "has_pricing_data": true
+        }
+      ],
+      "custom_segment_proposals": null,
+      "clarification_needed": "Consider being more specific about your target audience characteristics, such as demographics, interests, or behaviors."
+    },
+    "activations": [
+      {
+        "signal_id": "sports_enthusiasts_public",
+        "signal_name": "Sports Enthusiasts - Public",
+        "activation_result": {}
+      },
+      {
+        "signal_id": "peer39_luxury_auto",
+        "signal_name": "Luxury Automotive Context",
+        "activation_result": {}
+      }
+    ]
+  },
+  "sales_agent": {
+    "products": {
+      "products": [
+        {
+          "product_id": "run_of_site_display",
+          "name": "Run of Site - Display",
+          "description": "Non-guaranteed display advertising across all available inventory. Supports standard IAB display formats.",
+          "formats": [
+            {
+              "format_id": "display_300x250",
+              "name": "Display 300X250",
+              "type": "display",
+              "description": "Display 300X250 format",
+              "assets": [],
+              "delivery_options": {
+                "hosted": {},
+                "vast": {}
+              }
+            },
+            {
+              "format_id": "display_728x90",
+              "name": "Display 728X90",
+              "type": "display",
+              "description": "Display 728X90 format",
+              "assets": [],
+              "delivery_options": {
+                "hosted": {},
+                "vast": {}
+              }
+            },
+            {
+              "format_id": "display_320x50",
+              "name": "Display 320X50",
+              "type": "display",
+              "description": "Display 320X50 format",
+              "assets": [],
+              "delivery_options": {
+                "hosted": {},
+                "vast": {}
+              }
+            },
+            {
+              "format_id": "display_300x600",
+              "name": "Display 300X600",
+              "type": "display",
+              "description": "Display 300X600 format",
+              "assets": [],
+              "delivery_options": {
+                "hosted": {},
+                "vast": {}
+              }
+            }
+          ],
+          "delivery_type": "non_guaranteed",
+          "is_fixed_price": false,
+          "cpm": null,
+          "price_guidance": {
+            "floor": 1.0,
+            "p25": null,
+            "p50": 10.0,
+            "p75": null,
+            "p90": null
+          },
+          "is_custom": false,
+          "expires_at": null,
+          "implementation_config": {
+            "is_run_of_site": true,
+            "priority": "low"
+          },
+          "policy_compliance": "Compliant",
+          "targeted_ages": null,
+          "verified_minimum_age": null
+        },
+        {
+          "product_id": "homepage_takeover",
+          "name": "Homepage Takeover",
+          "description": "Premium guaranteed placement on homepage with high viewability. Desktop and mobile optimized.",
+          "formats": [
+            {
+              "format_id": "display_970x250",
+              "name": "Display 970X250",
+              "type": "display",
+              "description": "Display 970X250 format",
+              "assets": [],
+              "delivery_options": {
+                "hosted": {},
+                "vast": {}
+              }
+            },
+            {
+              "format_id": "display_728x90",
+              "name": "Display 728X90",
+              "type": "display",
+              "description": "Display 728X90 format",
+              "assets": [],
+              "delivery_options": {
+                "hosted": {},
+                "vast": {}
+              }
+            },
+            {
+              "format_id": "display_320x50",
+              "name": "Display 320X50",
+              "type": "display",
+              "description": "Display 320X50 format",
+              "assets": [],
+              "delivery_options": {
+                "hosted": {},
+                "vast": {}
+              }
+            }
+          ],
+          "delivery_type": "guaranteed",
+          "is_fixed_price": true,
+          "cpm": 25.0,
+          "price_guidance": null,
+          "is_custom": false,
+          "expires_at": null,
+          "implementation_config": {
+            "is_premium": true,
+            "priority": "high",
+            "viewability_threshold": 70
+          },
+          "policy_compliance": "Compliant",
+          "targeted_ages": null,
+          "verified_minimum_age": null
+        },
+        {
+          "product_id": "mobile_interstitial",
+          "name": "Mobile Interstitial",
+          "description": "Full-screen mobile interstitial ads with frequency capping. High engagement rates.",
+          "formats": [
+            {
+              "format_id": "display_320x480",
+              "name": "Display 320X480",
+              "type": "display",
+              "description": "Display 320X480 format",
+              "assets": [],
+              "delivery_options": {
+                "hosted": {},
+                "vast": {}
+              }
+            },
+            {
+              "format_id": "display_300x250",
+              "name": "Display 300X250",
+              "type": "display",
+              "description": "Display 300X250 format",
+              "assets": [],
+              "delivery_options": {
+                "hosted": {},
+                "vast": {}
+              }
+            }
+          ],
+          "delivery_type": "guaranteed",
+          "is_fixed_price": true,
+          "cpm": 15.0,
+          "price_guidance": null,
+          "is_custom": false,
+          "expires_at": null,
+          "implementation_config": {
+            "is_interstitial": true,
+            "priority": "medium"
+          },
+          "policy_compliance": "Compliant",
+          "targeted_ages": null,
+          "verified_minimum_age": null
+        },
+        {
+          "product_id": "video_preroll",
+          "name": "Video Pre-Roll",
+          "description": "Standard pre-roll video advertising. VAST 4.0 compliant with viewability measurement.",
+          "formats": [
+            {
+              "format_id": "video_vast",
+              "name": "Video Vast",
+              "type": "video",
+              "description": "Video Vast format",
+              "assets": [],
+              "delivery_options": {
+                "hosted": {},
+                "vast": {}
+              }
+            }
+          ],
+          "delivery_type": "non_guaranteed",
+          "is_fixed_price": false,
+          "cpm": null,
+          "price_guidance": {
+            "floor": 10.0,
+            "p25": null,
+            "p50": 50.0,
+            "p75": null,
+            "p90": null
+          },
+          "is_custom": false,
+          "expires_at": null,
+          "implementation_config": {
+            "video_settings": {
+              "skippable_after_seconds": 5,
+              "max_duration_seconds": 30,
+              "vast_version": "4.0"
+            },
+            "priority": "medium"
+          },
+          "policy_compliance": "Compliant",
+          "targeted_ages": null,
+          "verified_minimum_age": null
+        },
+        {
+          "product_id": "native_infeed",
+          "name": "Native In-Feed",
+          "description": "Native advertising that matches your site's look and feel. Appears within content feeds.",
+          "formats": [
+            {
+              "format_id": "native_infeed",
+              "name": "Native Infeed",
+              "type": "video",
+              "description": "Native Infeed format",
+              "assets": [],
+              "delivery_options": {
+                "hosted": {},
+                "vast": {}
+              }
+            }
+          ],
+          "delivery_type": "non_guaranteed",
+          "is_fixed_price": false,
+          "cpm": null,
+          "price_guidance": {
+            "floor": 2.0,
+            "p25": null,
+            "p50": 15.0,
+            "p75": null,
+            "p90": null
+          },
+          "is_custom": false,
+          "expires_at": null,
+          "implementation_config": {
+            "native_settings": {
+              "template_type": "standard",
+              "required_assets": [
+                "headline",
+                "description",
+                "image",
+                "logo"
+              ]
+            },
+            "priority": "medium"
+          },
+          "policy_compliance": "Compliant",
+          "targeted_ages": null,
+          "verified_minimum_age": null
+        },
+        {
+          "product_id": "contextual_display",
+          "name": "Contextual Display",
+          "description": "Display advertising with contextual targeting based on page content. No cookies required.",
+          "formats": [
+            {
+              "format_id": "display_300x250",
+              "name": "Display 300X250",
+              "type": "display",
+              "description": "Display 300X250 format",
+              "assets": [],
+              "delivery_options": {
+                "hosted": {},
+                "vast": {}
+              }
+            },
+            {
+              "format_id": "display_728x90",
+              "name": "Display 728X90",
+              "type": "display",
+              "description": "Display 728X90 format",
+              "assets": [],
+              "delivery_options": {
+                "hosted": {},
+                "vast": {}
+              }
+            },
+            {
+              "format_id": "display_160x600",
+              "name": "Display 160X600",
+              "type": "display",
+              "description": "Display 160X600 format",
+              "assets": [],
+              "delivery_options": {
+                "hosted": {},
+                "vast": {}
+              }
+            }
+          ],
+          "delivery_type": "non_guaranteed",
+          "is_fixed_price": false,
+          "cpm": null,
+          "price_guidance": {
+            "floor": 2.0,
+            "p25": null,
+            "p50": 12.0,
+            "p75": null,
+            "p90": null
+          },
+          "is_custom": false,
+          "expires_at": null,
+          "implementation_config": {
+            "privacy_compliant": true,
+            "no_cookies": true,
+            "priority": "medium"
+          },
+          "policy_compliance": "Compliant",
+          "targeted_ages": null,
+          "verified_minimum_age": null
+        }
+      ]
+    },
+    "error": "Error calling tool 'create_media_buy': 'CreateMediaBuyRequest' object has no attribute 'campaign_objective'"
+  },
+  "combined_workflow": {
+    "signals_found": 2,
+    "signals_activated": 2,
+    "products_found": 6,
+    "media_buy_created": false,
+    "workflow_status": "complete"
+  },
+  "final_results": {
+    "campaign_ready": false,
+    "signals_available": 2,
+    "products_available": 6,
+    "budget_allocation": 25000.0,
+    "flight_dates": "2025-01-15 to 2025-02-15",
+    "targeting_summary": "US politics and news enthusiasts",
+    "recommendations": [
+      "\u2705 Signals discovered and activated for politics and news enthusiasts",
+      "\u2705 Premium inventory identified for politics and news content",
+      "\ud83c\udfaf Ready for FreshBake Co. 'Breaking Bread - Politics & News' campaign execution"
+    ]
+  }
+}
