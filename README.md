@@ -59,11 +59,16 @@ Frontend (HTML/CSS/JS) → Flask Backend → Sales Agent + Signals Agent
 
 4. **Start the Flask backend**
    ```bash
-   python app.py
+   python3 app.py
+   ```
+   
+   Or use the startup script:
+   ```bash
+   ./start_app.sh
    ```
 
 5. **Open the application**
-   - Navigate to `http://localhost:5000` in your browser
+   - Navigate to `http://localhost:5001` in your browser
    - Or open `index.html` directly for frontend-only testing
 
 ## 📋 Usage
@@ -133,7 +138,7 @@ Edit `app.py` to configure:
 ### Frontend Configuration
 
 Edit `js/app.js` to configure:
-- API base URL (default: `http://localhost:5000/api`)
+- API base URL (default: `http://localhost:5001/api`)
 - Request timeouts and retry logic
 
 ## 📊 API Endpoints

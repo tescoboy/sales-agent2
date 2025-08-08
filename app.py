@@ -4,7 +4,7 @@ AdCP Agent Platform - Backend API
 Flask server that integrates with sales and signals agents
 """
 
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import asyncio
 import json
@@ -29,7 +29,22 @@ SALES_AGENT_TENANT = "default"
 @app.route('/')
 def index():
     """Serve the main page"""
-    return render_template('index.html')
+    return send_from_directory('.', 'index.html')
+
+@app.route('/<path:filename>')
+def serve_static(filename):
+    """Serve static files"""
+    return send_from_directory('.', filename)
+
+@app.route('/js/<path:filename>')
+def serve_js(filename):
+    """Serve JavaScript files"""
+    return send_from_directory('js', filename)
+
+@app.route('/styles/<path:filename>')
+def serve_styles(filename):
+    """Serve CSS files"""
+    return send_from_directory('styles', filename)
 
 @app.route('/api/health')
 def health_check():
@@ -273,7 +288,7 @@ def extract_targeting_summary(brief):
     if 'mobile' in brief_lower or 'app' in brief_lower:
         targeting.append('Mobile-first users')
     
-    return targeting.join(', ') if targeting else 'General audience'
+    return ', '.join(targeting) if targeting else 'General audience'
 
 def generate_recommendations(signals_results, sales_results):
     """Generate recommendations based on results"""
@@ -313,4 +328,4 @@ if __name__ == '__main__':
     print(f"Sales Agent URL: {SALES_AGENT_URL}")
     print(f"Signals Agent URL: {SIGNALS_AGENT_URL}")
     
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=True, host='0.0.0.0', port=5001)
