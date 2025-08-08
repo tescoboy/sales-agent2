@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdCP Agent Platform - Test</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f8f9fa; }
+        .card { border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+        .btn-primary { background: linear-gradient(135deg, #007bff 0%, #0056b3 100%); border: none; }
+        .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3); }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-8">
+                <div class="card">
+                    <div class="card-header bg-primary text-white text-center py-4">
+                        <h1 class="h3 mb-0">
+                            <i class="fas fa-rocket me-2"></i>
+                            AdCP Agent Platform
+                        </h1>
+                        <p class="mb-0 mt-2">Campaign Generator Test</p>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle me-2"></i>
+                            <strong>Test Mode:</strong> This is a simplified test version of the campaign generator.
+                        </div>
+                        
+                        <form id="testForm">
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold">
+                                        <i class="fas fa-building me-1"></i>Advertiser Name
+                                    </label>
+                                    <input type="text" class="form-control" id="advertiserName" 
+                                           value="FreshBake Co." required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold">
+                                        <i class="fas fa-tag me-1"></i>Campaign Name
+                                    </label>
+                                    <input type="text" class="form-control" id="campaignName" 
+                                           value="Breaking Bread - Politics & News" required>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">
+                                    <i class="fas fa-edit me-1"></i>Campaign Brief
+                                </label>
+                                <textarea class="form-control" id="campaignBrief" rows="4" required>
+Sell premium bread to people who like politics and news. Target audience includes political news readers, current events enthusiasts, and people who consume political content regularly. Budget: $25,000 for a 30-day campaign focusing on US audiences.
+                                </textarea>
+                            </div>
+                            
+                            <div class="row mb-3">
+                                <div class="col-md-4">
+                                    <label class="form-label fw-bold">
+                                        <i class="fas fa-dollar-sign me-1"></i>Budget (USD)
+                                    </label>
+                                    <input type="number" class="form-control" id="budget" 
+                                           value="25000" min="1000" step="1000" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label fw-bold">
+                                        <i class="fas fa-calendar me-1"></i>Start Date
+                                    </label>
+                                    <input type="date" class="form-control" id="startDate" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label fw-bold">
+                                        <i class="fas fa-calendar me-1"></i>End Date
+                                    </label>
+                                    <input type="date" class="form-control" id="endDate" required>
+                                </div>
+                            </div>
+                            
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">
+                                    <i class="fas fa-magic me-2"></i>Generate Campaign Strategy
+                                </button>
+                            </div>
+                        </form>
+                        
+                        <div id="results" class="mt-4 d-none">
+                            <hr>
+                            <h4 class="text-primary">
+                                <i class="fas fa-chart-bar me-2"></i>Test Results
+                            </h4>
+                            <div class="alert alert-success">
+                                <i class="fas fa-check-circle me-2"></i>
+                                <strong>Success!</strong> The frontend is working correctly.
+                            </div>
+                            <div class="card bg-light">
+                                <div class="card-body">
+                                    <h6 class="card-title">Sample Campaign Data:</h6>
+                                    <ul class="list-unstyled">
+                                        <li><strong>Advertiser:</strong> <span id="resultAdvertiser"></span></li>
+                                        <li><strong>Campaign:</strong> <span id="resultCampaign"></span></li>
+                                        <li><strong>Budget:</strong> $<span id="resultBudget"></span></li>
+                                        <li><strong>Duration:</strong> <span id="resultDuration"></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Set default dates
+        const today = new Date();
+        const nextMonth = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate());
+        
+        document.getElementById('startDate').value = today.toISOString().split('T')[0];
+        document.getElementById('endDate').value = nextMonth.toISOString().split('T')[0];
+        
+        // Handle form submission
+        document.getElementById('testForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const advertiser = document.getElementById('advertiserName').value;
+            const campaign = document.getElementById('campaignName').value;
+            const budget = document.getElementById('budget').value;
+            const startDate = document.getElementById('startDate').value;
+            const endDate = document.getElementById('endDate').value;
+            
+            // Display results
+            document.getElementById('resultAdvertiser').textContent = advertiser;
+            document.getElementById('resultCampaign').textContent = campaign;
+            document.getElementById('resultBudget').textContent = parseInt(budget).toLocaleString();
+            document.getElementById('resultDuration').textContent = `${startDate} to ${endDate}`;
+            
+            document.getElementById('results').classList.remove('d-none');
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
